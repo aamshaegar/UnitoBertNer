@@ -24,7 +24,10 @@ def plot_confusion_matrix(y_true, y_pred, classes = ['Class 0', 'Class 1'], figs
     plt.xlabel('Predicted label')
     plt.tight_layout()
     if saveName: plt.savefig("./Plot/" + saveName)
-    else: plt.savefig("./Plot/CM_matrix_" + str(datetime.now()).split(".")[0].replace(" ", "_") + ".png")
+    else: 
+        path = "./Plot/CM_matrix_" + str(datetime.now()).split(".")[0].replace(" ", "_") + ".png"
+        path = path.replace(":", "_")
+        plt.savefig(path)
     plt.show()
 
 

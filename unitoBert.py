@@ -20,8 +20,8 @@ model.to(device)
 
 # test name
 DATE_NAME = str(datetime.now()).split(".")[0].replace(" ", "_") 
-LOG_NAME = "log_" + DATE_NAME + ".txt"
-PLOT_NAME = "CM_matrix_" + DATE_NAME + ".png"
+LOG_NAME = ("log_" + DATE_NAME + ".txt").replace(":", "_")
+PLOT_NAME = ("CM_matrix_" + DATE_NAME + ".png").replace(":", "_")
 DATASET_BUILD = "output_dataset_" + DATE_NAME + ".csv"
 
 # New log File

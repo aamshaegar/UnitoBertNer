@@ -6,7 +6,9 @@ class SaveOutput():
   def __init__(self, filePath, fileName=None, printAll=False):
     
     if fileName: self.fileName = fileName
-    else: self.fileName = "log_" + str(datetime.now()).split(".")[0].replace(" ", "_") + ".txt"
+    else: 
+      self.fileName = "log_" + str(datetime.now()).split(".")[0].replace(" ", "_") + ".txt"
+      self.fileName = self.fileName.replace(":", "_")
     self.filePath = filePath + self.fileName
     self.printAll = printAll
 
