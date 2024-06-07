@@ -101,11 +101,15 @@ def main():
         print("USAGE: python unito-bert.py DATASET_PATH")
         exit()
 
-    saveToFile("Output Log " + str(datetime.now()) + "\n")
+    saveToFile("Output Log:  " + LOG_NAME + "\n")
     saveToFile("Dataset loaded...\n")
-    
     saveToFile("\n\nModel: ")
-    out = model.load_state_dict(torch.load("./character_bert_model/pretrained-models/general_character_bert/pytorch_model.bin"))
+    
+    try:
+        out = model.load_state_dict(torch.load("./character_bert_model/pretrained-models/general_character_bert/pytorch_model.bin"))
+    except Exception:
+        out = model.load_state_dict(torch.load("./character_bert_model/pretrained-models/general_character_bert/pytorch_model.bin", map_location ='cpu'))
+    
     saveToFile(str(out))
     datasetPath = sys.argv[1]
     if ".csv" in datasetPath: dataset = load_dataset_csv(datasetPath)
