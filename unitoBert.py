@@ -22,7 +22,7 @@ model.to(device)
 DATE_NAME = str(datetime.now()).split(".")[0].replace(" ", "_") 
 LOG_NAME = ("log_" + DATE_NAME + ".txt").replace(":", "_")
 PLOT_NAME = ("CM_matrix_" + DATE_NAME + ".png").replace(":", "_")
-DATASET_BUILD = "output_dataset_" + DATE_NAME + ".csv"
+#DATASET_BUILD = "output_dataset_" + DATE_NAME + ".csv"
 
 # New log File
 saveToFile = SaveOutput('./Test/', LOG_NAME, printAll=True)
